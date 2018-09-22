@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flyer.springboot.rest.dao.UserDao">
+    <resultMap id="userMap" type="com.flyer.springboot.rest.domain.User">
+        <id column="id" property="id"/>
+        <result column="id" property="id"/>
+        <result column="add_time" property="addTime"/>
+        <result column="open_id" property="openId"/>
+        <result column="union_id" property="unionId"/>
+        <result column="cellphone" property="cellphone"/>
+        <result column="wechat" property="wechat"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="country" property="country"/>
+        <result column="language" property="language"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="sex" property="sex"/>
+        <result column="head_img_url" property="headImgUrl"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+    <sql id="userColumn">
+        <trim suffix="" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="addTime != null">add_time,</if>
+            <if test="openId != null">open_id,</if>
+            <if test="unionId != null">union_id,</if>
+            <if test="cellphone != null">cellphone,</if>
+            <if test="wechat != null">wechat,</if>
+            <if test="nickName != null">nick_name,</if>
+            <if test="country != null">country,</if>
+            <if test="language != null">language,</if>
+            <if test="province != null">province,</if>
+            <if test="city != null">city,</if>
+            <if test="sex != null">sex,</if>
+            <if test="headImgUrl != null">head_img_url,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+    </sql>
+    <sql id="userValue">
+        <trim suffix="" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="addTime != null">#{addTime},</if>
+            <if test="openId != null">#{openId},</if>
+            <if test="unionId != null">#{unionId},</if>
+            <if test="cellphone != null">#{cellphone},</if>
+            <if test="wechat != null">#{wechat},</if>
+            <if test="nickName != null">#{nickName},</if>
+            <if test="country != null">#{country},</if>
+            <if test="language != null">#{language},</if>
+            <if test="province != null">#{province},</if>
+            <if test="city != null">#{city},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="headImgUrl != null">#{headImgUrl},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </sql>
+    <sql id="userBaseColumn">
+        <trim suffix="" suffixOverrides=",">
+            id,
+            add_time,
+            open_id,
+            union_id,
+            cellphone,
+            wechat,
+            nick_name,
+            country,
+            language,
+            province,
+            city,
+            sex,
+            head_img_url,
+            remark,
+        </trim>
+    </sql>
+    <insert id="saveUser" parameterType="com.flyer.springboot.rest.domain.User"
+            useGeneratedKeys="true" keyProperty="id">
+        <selectKey resultType="Long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user (<include refid="userColumn"/>)
+        values (<include refid="userValue"/>)
+    </insert>
+    <update id="updateUser" parameterType="com.flyer.springboot.rest.domain.User">
+        update user
+        <set>
+            <if test="addTime != null">add_time=#{addTime},</if>
+            <if test="openId != null">open_id=#{openId},</if>
+            <if test="unionId != null">union_id=#{unionId},</if>
+            <if test="cellphone != null">cellphone=#{cellphone},</if>
+            <if test="wechat != null">wechat=#{wechat},</if>
+            <if test="nickName != null">nick_name=#{nickName},</if>
+            <if test="country != null">country=#{country},</if>
+            <if test="language != null">language=#{language},</if>
+            <if test="province != null">province=#{province},</if>
+            <if test="city != null">city=#{city},</if>
+            <if test="sex != null">sex=#{sex},</if>
+            <if test="headImgUrl != null">head_img_url=#{headImgUrl},</if>
+            <if test="remark != null">remark=#{remark}</if>
+        </set>
+        where id = #{id}
+    </update>
+    <delete id="removeUser" parameterType="java.lang.Long">
+        DELETE FROM user
+        WHERE id = #{id}
+    </delete>
+    <select id="findUserById" parameterType="java.lang.Long" resultMap="userMap">
+        select
+        <include refid="userBaseColumn"/>
+        from user
+        where id = #{id}
+    </select>
+</mapper>
