@@ -8,3 +8,6 @@ branches:
     - master
 
 script: mvn clean package -DskipTests
+
+after_success:
+  - mvn clean test jacoco:report coveralls:report -DrepoToken="${COVERALLS_TOKEN}"
