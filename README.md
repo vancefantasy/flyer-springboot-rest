@@ -16,4 +16,4 @@ flyer-springboot-rest是一个示例项目，它由flyer-maker生成。flyer-spr
 写好单元测试不是一件容易的事，这里分享下自己的理解：多数情况下使用单独的数据库运行单元测试，运行完清空数据库，会是一个明智的选择。在本项目中，也体现了这个规则，为避免误清空其他环境数据，运行单元测试前会检测数据库名是否以'_ut'结尾。
 
 # 贡献
-本人水平有限，请不吝赐教。有意见或更好想法，请[邮件](mailto:vance.8807@gmail.com)或提issue，当然也可以提交Pull Request。
+本人水平有限，请不吝赐教。有意见或更好建议，请[邮件](mailto:vance.8807@gmail.com)或提issue，也欢迎提交Pull Request。
