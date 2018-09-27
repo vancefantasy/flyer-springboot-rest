@@ -57,7 +57,7 @@ public class CommonController extends BaseController {
      * <p>
      * usage：
      * 1. /loggers for all logger
-     * 2. /loggers/com.flyer.springmvc.rest.CommonController for specified logger
+     * 2. /loggers/com.flyer.springmvc.rest.web.CommonController for specified logger
      *
      * @param name
      * @return
