@@ -1,10 +1,9 @@
-package com.flyer.springboot.rest.impl;
+package com.flyer.springboot.rest.service.impl;
 
 import com.flyer.springboot.rest.AbstractTest;
 import com.flyer.springboot.rest.dao.UserDao;
 import com.flyer.springboot.rest.data.UserData;
 import com.flyer.springboot.rest.domain.User;
-import com.flyer.springboot.rest.service.impl.UserServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -28,8 +27,8 @@ public class UserServiceImplTest extends AbstractTest {
     @MockBean
     private UserDao userDao;
 
-    @InjectMocks
     @Inject
+    @InjectMocks
     private UserServiceImpl userService;
 
     @Before

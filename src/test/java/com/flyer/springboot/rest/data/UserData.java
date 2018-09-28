@@ -37,6 +37,7 @@ public class UserData {
                 user.setId(withGivenId);
             }
         }
+
         user.setAddTime(new Date());
         user.setOpenId("openId_" + RandomUtil.randomStringFixLength(5));
         user.setUnionId("unionId_" + RandomUtil.randomStringFixLength(1));
