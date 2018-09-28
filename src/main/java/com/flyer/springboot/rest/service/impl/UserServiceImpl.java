@@ -8,8 +8,6 @@ import com.flyer.springboot.rest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-
 /**
  * Created by jianying.li on 2018/9/16.
  */
@@ -21,7 +19,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User saveUser(User user) {
-        user.setAddTime(new Date());
         int result = userDao.saveUser(user);
         if (result == 0) {
             BizException.throwOut(ErrorEnum.DB_FAIL);

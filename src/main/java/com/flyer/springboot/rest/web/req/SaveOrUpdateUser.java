@@ -1,5 +1,7 @@
 package com.flyer.springboot.rest.web.req;
 
+import java.util.Date;
+
 /**
  * Created by jianying.li on 2018/9/16.
  */
@@ -9,6 +11,10 @@ public class SaveOrUpdateUser {
      *
      */
     private Long id;
+    /**
+     *
+     */
+    private Date addTime;
     /**
      *
      */
@@ -64,6 +70,14 @@ public class SaveOrUpdateUser {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
     }
 
     public String getOpenId() {

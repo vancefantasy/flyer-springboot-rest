@@ -9,7 +9,6 @@ import com.vip.vjtools.vjkit.mapper.JsonMapper;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 
 import javax.inject.Inject;
