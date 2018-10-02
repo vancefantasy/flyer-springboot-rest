@@ -39,18 +39,18 @@ public class UserData {
         }
 
         user.setAddTime(new Date());
-        user.setOpenId("openId_" + RandomUtil.randomStringFixLength(5));
-        user.setUnionId("unionId_" + RandomUtil.randomStringFixLength(1));
-        user.setCellphone("cellphone_" + RandomUtil.randomStringFixLength(5));
-        user.setWechat("wechat_" + RandomUtil.randomStringFixLength(5));
-        user.setNickName("nickName_" + RandomUtil.randomStringFixLength(5));
-        user.setCountry("country_" + RandomUtil.randomStringFixLength(5));
-        user.setLanguage("language_" + RandomUtil.randomStringFixLength(5));
-        user.setProvince("province_" + RandomUtil.randomStringFixLength(5));
-        user.setCity("city_" + RandomUtil.randomStringFixLength(5));
+        user.setOpenId("open_id_" + RandomUtil.randomStringFixLength(20));
+        user.setUnionId("union_id_" + RandomUtil.randomStringFixLength(2));
+        user.setCellphone("cellphone_" + RandomUtil.randomStringFixLength(20));
+        user.setWechat("wechat_" + RandomUtil.randomStringFixLength(20));
+        user.setNickName("nick_name_" + RandomUtil.randomStringFixLength(20));
+        user.setCountry("country_" + RandomUtil.randomStringFixLength(20));
+        user.setLanguage("language_" + RandomUtil.randomStringFixLength(20));
+        user.setProvince("province_" + RandomUtil.randomStringFixLength(20));
+        user.setCity("city_" + RandomUtil.randomStringFixLength(20));
         user.setSex(RandomUtil.nextInt(10));
-        user.setHeadImgUrl("headImgUrl_" + RandomUtil.randomStringFixLength(5));
-        user.setRemark("remark_" + RandomUtil.randomStringFixLength(5));
+        user.setHeadImgUrl("head_img_url_" + RandomUtil.randomStringFixLength(20));
+        user.setRemark("remark_" + RandomUtil.randomStringFixLength(20));
         return user;
     }
 }

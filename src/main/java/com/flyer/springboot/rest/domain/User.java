@@ -1,11 +1,13 @@
 package com.flyer.springboot.rest.domain;
 
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * Created by jianying.li on 2018/9/16.
  */
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      *
@@ -14,7 +16,7 @@ public class User {
     /**
      *
      */
-    private Date addTime;
+    private java.util.Date addTime;
     /**
      *
      */
@@ -64,115 +66,116 @@ public class User {
      */
     private String remark;
 
-    public Long getId() {
-        return id;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Date getAddTime() {
-        return addTime;
+    public Long getId() {
+        return id;
     }
 
-    public void setAddTime(Date addTime) {
+    public void setAddTime(java.util.Date addTime) {
         this.addTime = addTime;
     }
 
-    public String getOpenId() {
-        return openId;
+    public java.util.Date getAddTime() {
+        return addTime;
     }
 
     public void setOpenId(String openId) {
         this.openId = openId;
     }
 
-    public String getUnionId() {
-        return unionId;
+    public String getOpenId() {
+        return openId;
     }
 
     public void setUnionId(String unionId) {
         this.unionId = unionId;
     }
 
-    public String getCellphone() {
-        return cellphone;
+    public String getUnionId() {
+        return unionId;
     }
 
     public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
     }
 
-    public String getWechat() {
-        return wechat;
+    public String getCellphone() {
+        return cellphone;
     }
 
     public void setWechat(String wechat) {
         this.wechat = wechat;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getWechat() {
+        return wechat;
     }
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
 
-    public String getCountry() {
-        return country;
+    public String getNickName() {
+        return nickName;
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getCountry() {
+        return country;
     }
 
     public void setLanguage(String language) {
         this.language = language;
     }
 
-    public String getProvince() {
-        return province;
+    public String getLanguage() {
+        return language;
     }
 
     public void setProvince(String province) {
         this.province = province;
     }
 
-    public String getCity() {
-        return city;
+    public String getProvince() {
+        return province;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
-    public Integer getSex() {
-        return sex;
+    public String getCity() {
+        return city;
     }
 
     public void setSex(Integer sex) {
         this.sex = sex;
     }
 
-    public String getHeadImgUrl() {
-        return headImgUrl;
+    public Integer getSex() {
+        return sex;
     }
 
     public void setHeadImgUrl(String headImgUrl) {
         this.headImgUrl = headImgUrl;
     }
 
-    public String getRemark() {
-        return remark;
+    public String getHeadImgUrl() {
+        return headImgUrl;
     }
 
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    public String getRemark() {
+        return remark;
+    }
+
 }

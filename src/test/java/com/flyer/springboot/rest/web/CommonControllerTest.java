@@ -5,6 +5,7 @@ import com.flyer.springboot.rest.common.BaseResponse;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 
+import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -24,7 +25,7 @@ public class CommonControllerTest extends AbstractMVCTest {
 
     @Test
     public void setLoggerLevel() throws Exception {
-        this.mockMvc.perform(get("/setLevel").param("logger", "com.flyer").param("level", "DEBUG"))
+        this.mockMvc.perform(get("/setLevel").param("logger", "com.flyer.springboot.rest").param("level", "DEBUG"))
             .andExpect(status().isOk()).andDo(print())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("code").value(BaseResponse.CODE_SUCCESS));
@@ -37,7 +38,7 @@ public class CommonControllerTest extends AbstractMVCTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("code").value(BaseResponse.CODE_SUCCESS));
 
-        this.mockMvc.perform(get("/loggers/com.flyer"))
+        this.mockMvc.perform(get("/loggers/com.flyer.springboot.rest"))
             .andExpect(status().isOk()).andDo(print())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("code").value(BaseResponse.CODE_SUCCESS));

@@ -2,8 +2,8 @@ package com.flyer.springboot.rest.service.impl;
 
 import com.flyer.springboot.rest.common.exception.BizException;
 import com.flyer.springboot.rest.constant.ErrorEnum;
-import com.flyer.springboot.rest.dao.UserDao;
 import com.flyer.springboot.rest.domain.User;
+import com.flyer.springboot.rest.dao.UserDao;
 import com.flyer.springboot.rest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     public Integer updateUser(User user) {
         int result = userDao.updateUser(user);
         if (result == 0) {
-            throw new BizException(ErrorEnum.DB_FAIL);
+            BizException.throwOut(ErrorEnum.DB_FAIL);
         }
         return result;
     }
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     public Integer removeUser(Long id) {
         int result = userDao.removeUser(id);
         if (result == 0) {
-            throw new BizException(ErrorEnum.DB_FAIL);
+            BizException.throwOut(ErrorEnum.DB_FAIL);
         }
         return result;
     }
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
     public User findUserById(Long id) {
         User user = userDao.findUserById(id);
         if (user == null) {
-            throw new BizException(ErrorEnum.NOT_FOUND);
+            BizException.throwOut(ErrorEnum.DB_FAIL);
         }
         return user;
     }

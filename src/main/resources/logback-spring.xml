@@ -18,7 +18,7 @@
             <OnMatch>ACCEPT</OnMatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/flyer_debug.%d{yyyyMMdd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/flyer-springboot-rest_debug.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -30,7 +30,7 @@
             <level>INFO</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/flyer_info.%d{yyyyMMdd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/flyer-springboot-rest_info.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -42,7 +42,7 @@
             <level>WARN</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/flyer_error.%d{yyyyMMdd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/flyer-springboot-rest_error.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -52,6 +52,8 @@
 
     <logger name="uk.org.lidalia.sysoutslf4j.context.SysOutOverSLF4J" level="ERROR"/>
     <logger name="com.flyer.springboot.rest" level="INFO"/>
+    <!-- set level 'DEBUG' then print sql log -->
+    <logger name="com.flyer.springboot.rest.dao" level="INFO"/>
 
     <root level="INFO">
         <springProfile name="default,dev">
