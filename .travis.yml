@@ -7,7 +7,7 @@ services:
   - mysql
 
 before_install:
-  - mysql -u root -p < src/test/resources/travisci.sql
+  - mysql -u root --password="" < src/test/resources/travisci.sql
 
 branches:
   only:
