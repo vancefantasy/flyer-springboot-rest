@@ -99,7 +99,6 @@ public class DateUtil {
      *
      * @param date
      * @return
-     * @author LiJianying
      */
     public static String getWeekArabic(Date date) {
         Calendar c = Calendar.getInstance();
@@ -121,7 +120,6 @@ public class DateUtil {
      *
      * @param date
      * @return
-     * @author LiJianying
      */
     public static String getWeek(Date date) {
         return new SimpleDateFormat("EEEE").format(date);
